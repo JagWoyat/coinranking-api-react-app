@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.div`
+interface WrapperProps {
+  visible: boolean;
+}
+
+export const Wrapper = styled.div<WrapperProps>`
   z-index: 9999;
   position: fixed;
   display: flex;

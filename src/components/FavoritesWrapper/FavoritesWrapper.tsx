@@ -32,10 +32,11 @@ export default function FavoritesWrapper() {
     <>
       <Wrapper>
         {loading === "succeeded" &&
-          favorites.map((crypto: object | undefined) => (
+          favorites.map((crypto: any) => (
             <FavoriteCrypto
               crypto={crypto}
               setRender={setIsRender}
+              custom={false}
               key={crypto.uuid}
             />
           ))}

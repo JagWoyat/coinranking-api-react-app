@@ -7,7 +7,17 @@ import { useAppDispatch } from "../../helperFunctions/hooks";
 import { isPriceIncreasing } from "../../helperFunctions/isPriceIncreasing";
 import { Wrapper, JustDiv, TitleDiv, PriceDiv, ButtonWraper } from "./styles";
 
-export default function FavoriteCrypto({ crypto, setRender, custom = false }) {
+type FavoriteProps = {
+  crypto: any;
+  setRender: (bol: boolean) => void;
+  custom: boolean;
+};
+
+export default function FavoriteCrypto({
+  crypto,
+  setRender,
+  custom = false,
+}: FavoriteProps) {
   const dispatch = useAppDispatch();
   return (
     <>

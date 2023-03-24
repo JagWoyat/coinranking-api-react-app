@@ -5,8 +5,8 @@ import storage from "redux-persist/lib/storage";
 import { FormData } from "../types/formData";
 
 interface UsersState {
-  ids: [string];
-  custom: [{}];
+  ids: [string, string, string, string, string];
+  custom: [{}, {}];
   coins: [{}];
   coin: {};
   loading: "idle" | "pending" | "succeeded" | "failed";
@@ -15,18 +15,36 @@ interface UsersState {
 }
 
 const initialState = {
-  ids: ["Qwsogvtv82FCd"],
+  ids: [
+    "Qwsogvtv82FCd",
+    "razxDUgYGNAdQ",
+    "-l8Mn2pVlRs-p",
+    "D7B1x_ks7WhV5",
+    "3mVx2FX_iJFp5",
+  ],
   custom: [
     {
       iconUrl: "https://cdn.coinranking.com/bOabBYkcX/bitcoin_btc.svg",
       rank: "100-299",
-      name: "ShitCoin",
-      symbol: "SHT",
+      name: "CustomCoin",
+      symbol: "CCO",
       price: "1234.56789",
       change: "Increasing",
-      marketCap: "1000",
+      marketCap: "1000000",
       websiteUrl: "/details/Qwsogvtv82FCd",
-      description: "One of many shitcoins like any other",
+      description: "One of many cryptocurrencies",
+    },
+    {
+      iconUrl: "https://avatars.githubusercontent.com/u/110792999?v=4",
+      rank: "1-99",
+      name: "My Github",
+      symbol: "GIT",
+      price: "100",
+      change: "Increasing",
+      marketCap: "1000000",
+      websiteUrl: "https://github.com/JagWoyat",
+      description:
+        "Cryptocurrency based on a very skilled React developer and his Github page",
     },
   ],
   coins: [{}],

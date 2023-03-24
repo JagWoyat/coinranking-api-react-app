@@ -5,7 +5,7 @@ import Form from "../Form/Form";
 import { Wrapper, ShowButton } from "./styles";
 
 interface FormProps {
-  onSubmit: (formData: FormData) => void;
+  onSubmit: any;
 }
 
 export default function NewCryptoBar({ onSubmit }: FormProps) {

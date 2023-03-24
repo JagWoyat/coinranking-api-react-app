@@ -32,7 +32,11 @@ export const NameWrapper = styled.div`
   }
 `;
 
-export const ButtonWraper = styled.div`
+interface ButtonWProps {
+  availible: boolean;
+}
+
+export const ButtonWraper = styled.div<ButtonWProps>`
   display: flex;
   justify-content: space-around;
   button {
@@ -55,6 +59,10 @@ export const ButtonWraper = styled.div`
   }
 `;
 
-export const PriceDiv = styled.div`
+interface PriceProps {
+  price: boolean;
+}
+
+export const PriceDiv = styled.div<PriceProps>`
   color: ${(props) => (props.price ? "green" : "red")};
 `;

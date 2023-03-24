@@ -16,7 +16,7 @@ export default function Root() {
       <Navbar />
       <FavoritesWrapper />
       <NewCryptoBar
-        onSubmit={(model) => {
+        onSubmit={(model: FormData) => {
           dispatch(addCustom(model));
         }}
       />

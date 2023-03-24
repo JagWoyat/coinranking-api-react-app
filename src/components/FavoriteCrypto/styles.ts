@@ -75,6 +75,10 @@ export const ButtonWraper = styled.div`
   }
 `;
 
-export const PriceDiv = styled.div`
+interface PriceProps {
+  price: boolean;
+}
+
+export const PriceDiv = styled.div<PriceProps>`
   color: ${(props) => (props.price ? "green" : "red")};
 `;
