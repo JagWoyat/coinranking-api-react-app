@@ -8,8 +8,7 @@ export default function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Navigate to="/favorites" />} />
-          <Route path="/favorites" element={<Root />} />
+          <Route path="/" element={<Root />} />
           <Route path="/details/:uuid" element={<Details />} />
           <Route path="/search" element={<Search />} />
         </Routes>

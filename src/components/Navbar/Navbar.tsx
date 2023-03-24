@@ -8,12 +8,12 @@ import { RouteWrapper, Wrapper, NameWrapper, RouteLink } from "./styles";
 export default function Navbar() {
   return (
     <Wrapper>
-      <NameWrapper as={Link} to="/favorites">
+      <NameWrapper as={Link} to="/">
         <Icon icon={bitcoin} />
         <h1>CryptoTracker</h1>
       </NameWrapper>
       <RouteWrapper>
-        <RouteLink as={NavLink} to="/favorites">
+        <RouteLink as={NavLink} to="/">
           <h1>Favorites</h1>
         </RouteLink>
         <RouteLink as={NavLink} to="/search">
