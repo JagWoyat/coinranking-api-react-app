@@ -44,6 +44,22 @@ export const TitleDiv = styled.div`
   > * {
     margin-bottom: 0;
   }
+
+  @media (max-width: 750px) {
+    img {
+      top: 0.5rem;
+      height: 20px;
+      width: 20px;
+    }
+    h1 {
+      font-size: small;
+    }
+    h3 {
+      font-size: small;
+      top: 0;
+      margin-left: 0.25rem;
+    }
+  }
 `;
 
 interface PriceProps {

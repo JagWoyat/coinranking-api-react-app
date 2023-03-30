@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import add from "../../assets/add.svg";
 import Icon from "../Icon";
 import Form from "../Form/Form";
-import { Wrapper, ShowButton } from "./styles";
+import { Wrapper } from "./styles";
 
 interface FormProps {
   onSubmit: any;
@@ -16,7 +16,7 @@ export default function NewCryptoBar({ onSubmit }: FormProps) {
       <h2>Add new cryptocurrency</h2>
       <Form onSubmit={onSubmit} />
       <Icon
-        as={ShowButton}
+        className="ShowButton"
         icon={add}
         onClick={() => {
           setVisible(!visible);

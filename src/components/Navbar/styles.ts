@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
   position: absolute;
+  background-color: #d2d2d2;
   top: 0px;
   left: 0px;
   display: flex;
@@ -10,7 +11,12 @@ export const Wrapper = styled.div`
   align-items: center;
   width: 100%;
   height: 5rem;
-  background-color: #d2d2d2;
+  @media (max-width: 750px) {
+    height: 3rem;
+    h1 {
+      font-size: medium;
+    }
+  }
 `;
 
 export const NameWrapper = styled.div`
@@ -25,6 +31,17 @@ export const NameWrapper = styled.div`
     position: relative;
     bottom: 0.5rem;
   }
+  @media (max-width: 750px) {
+    margin-top: 0.5rem;
+    margin-left: 1rem;
+    .Icon {
+      width: 2rem;
+      height: 2rem;
+    }
+    h1 {
+      bottom: 0.25rem;
+    }
+  }
 `;
 
 export const RouteWrapper = styled.div`
@@ -34,10 +51,15 @@ export const RouteWrapper = styled.div`
   gap: 3rem;
   margin-top: 1rem;
   margin-right: 5rem;
+  margin-left: 0.5rem;
 
   h1 {
     position: relative;
     bottom: 0.5rem;
+  }
+  @media (max-width: 750px) {
+    gap: 1rem;
+    margin-right: 1rem;
   }
 `;
 export const RouteLink = styled.h1`

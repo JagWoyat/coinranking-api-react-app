@@ -9,7 +9,7 @@ export default function Navbar() {
   return (
     <Wrapper>
       <NameWrapper as={Link} to="/">
-        <Icon icon={bitcoin} />
+        <Icon className="Icon" icon={bitcoin} />
         <h1>CryptoTracker</h1>
       </NameWrapper>
       <RouteWrapper>

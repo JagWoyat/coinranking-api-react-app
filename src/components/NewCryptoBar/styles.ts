@@ -15,15 +15,15 @@ export const Wrapper = styled.div<WrapperProps>`
   right: 0;
   top: 10vh;
   height: 90vh;
-  width: 40rem;
+  min-width: 300px;
+  width: 30%;
   background-color: white;
   box-shadow: -5px 0 15px lightgray;
   transform: translate(${({ visible }) => (visible ? "0" : "105%")});
   transition: transform 0.25s ease-in-out;
-`;
-
-export const ShowButton = styled.button`
-  position: absolute;
-  bottom: 50px;
-  right: 700px;
+  .ShowButton {
+    position: absolute;
+    bottom: 50px;
+    right: 110%;
+  }
 `;

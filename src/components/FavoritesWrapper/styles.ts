@@ -2,8 +2,11 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  width: 80%;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 2rem;
-  width: 60rem;
   margin: 3rem;
+  @media (max-width: 750px) {
+    margin: 1rem;
+  }
 `;

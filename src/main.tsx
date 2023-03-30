@@ -19,7 +19,7 @@ const persistConfig = {
 
 const rootReducer = combineReducers({
   crypto: cryptocurrencySlice,
-  favs: favoritesSlice,
+  favs: persistedFavoritesReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
