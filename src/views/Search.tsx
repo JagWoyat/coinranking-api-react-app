@@ -3,6 +3,7 @@ import Input from "../components/Input";
 import Navbar from "../components/Navbar/Navbar";
 import { useSelector } from "react-redux";
 import {
+  changeLoadingToIdle,
   fetchCoins,
   getCrypto,
   getCryptoError,
@@ -36,6 +37,7 @@ export default function Search() {
 
   useEffect(() => {
     if (isRender) return setIsRender(false);
+    dispatch(changeLoadingToIdle("idle"));
     dispatch(fetchCoins());
   }, [isRender]);
 

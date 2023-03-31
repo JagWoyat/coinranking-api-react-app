@@ -132,6 +132,9 @@ export const favoritesSlice = createSlice({
     changeLoadingToIdle: (state, action) => {
       state.loading = action.payload;
     },
+    changeSLoadingToIdle: (state, action) => {
+      state.singleLoading = action.payload;
+    },
   },
   extraReducers(builder) {
     builder
@@ -146,10 +149,18 @@ export const favoritesSlice = createSlice({
         state.loading = "succeeded";
         state.coins = action.payload.data.coins;
       });
-    builder.addCase(fetchCoinByName.fulfilled, (state, action) => {
-      state.singleLoading = "succeeded";
-      state.coin = action.payload.data.coin;
-    });
+    builder
+      .addCase(fetchCoinByName.pending, (state, action) => {
+        state.singleLoading = "pending";
+      })
+      .addCase(fetchCoinByName.rejected, (state, action) => {
+        state.singleLoading = "failed";
+        state.error = action.error.message;
+      })
+      .addCase(fetchCoinByName.fulfilled, (state, action) => {
+        state.singleLoading = "succeeded";
+        state.coin = action.payload.data.coin;
+      });
   },
 });
 
@@ -181,5 +192,6 @@ export const {
   deleteFavorite,
   deleteFromIds,
   changeLoadingToIdle,
+  changeSLoadingToIdle,
   addCoin,
 } = favoritesSlice.actions;

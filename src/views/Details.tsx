@@ -3,6 +3,7 @@ import { useParams } from "react-router";
 import DetailedCrypto from "../components/DetailedCrypto/DetailedCrypto";
 import Navbar from "../components/Navbar/Navbar";
 import {
+  changeSLoadingToIdle,
   fetchCoinByName,
   getCoin,
   getSLoading,
@@ -21,16 +22,18 @@ export default function Details() {
 
   useEffect(() => {
     if (isRender) return setIsRender(false);
-    if (params.uuid?.substring(0, 6) === "custom")
+    if (params.uuid?.substring(0, 6) === "custom") {
       dispatch(addCoin(params.uuid));
-    else dispatch(fetchCoinByName(params.uuid));
+      dispatch(changeSLoadingToIdle("idle"));
+    } else dispatch(fetchCoinByName(params.uuid));
   }, [isRender]);
 
   return (
     <div>
       <Navbar />
       <div>
-        {coin.length != 0 && <DetailedCrypto {...coin} />}
+        {(coin.name === params.uuid?.substring(6) ||
+          coin.uuid === params.uuid) && <DetailedCrypto {...coin} />}
         {loading === "pending" && (
           <>
             <h1>loading...</h1>

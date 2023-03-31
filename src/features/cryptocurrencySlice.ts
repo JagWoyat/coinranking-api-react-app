@@ -36,6 +36,9 @@ export const cryptocurrencySlice = createSlice({
     addCrypto: (state, action) => {
       state.crypto = action.payload;
     },
+    changeLoadingToIdle: (state, action) => {
+      state.loading = action.payload;
+    },
   },
   extraReducers(builder) {
     builder
@@ -59,4 +62,4 @@ export const getCrypto = (state: any) => state.crypto.crypto;
 export const getCryptoLoading = (state: any) => state.crypto.loading;
 export const getCryptoError = (state: any) => state.crypto.error;
 
-export const { addCrypto } = cryptocurrencySlice.actions;
+export const { addCrypto, changeLoadingToIdle } = cryptocurrencySlice.actions;

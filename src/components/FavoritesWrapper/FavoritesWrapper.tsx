@@ -30,6 +30,16 @@ export default function FavoritesWrapper() {
 
   return (
     <>
+      {loading === "pending" && (
+        <>
+          <h1>loading...</h1>
+        </>
+      )}
+      {loading === "failed" && (
+        <>
+          <h1>{error}</h1>
+        </>
+      )}
       <Wrapper>
         {loading === "succeeded" &&
           favorites.map((crypto: any) => (
@@ -49,16 +59,6 @@ export default function FavoritesWrapper() {
           />
         ))}
       </Wrapper>
-      {loading === "pending" && (
-        <>
-          <h1>loading...</h1>
-        </>
-      )}
-      {loading === "failed" && (
-        <>
-          <h1>{error}</h1>
-        </>
-      )}
     </>
   );
 }
